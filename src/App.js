@@ -8,7 +8,8 @@ const App=()=>{
      const [latitude,setLatitude]=useState(0) // update the varable
      const [longitude,setLongitude]=useState(0)
      const [hemisphere,sethemisphere]=useState("")
-     const [month,setMonth]=useState(()=>{return new Date().getMonth()+1})
+    //  const [month,setMonth]=useState(()=>{return new Date().getMonth()+1})
+    const [month,setMonth]=useState(11)
      // hemisphere could only be updated by sethemisphere function
 
    // Normal variables we dont use it to update in react
@@ -52,6 +53,40 @@ return (
         <h1>longitude:{longitude}</h1>
         <h1>Hemisphere:{hemisphere}</h1>
         <h1>Month:{month}</h1>
+
+        {
+            hemisphere && (
+                (hemisphere=="Northern Hemisphere" && month>=3 && month<=10)||
+                (hemisphere=="Southern Hemisphere" && (month<=3||month>=10))
+
+            )
+
+            && 
+            (
+                <div>
+                    <h1>Welcome to Summer Season</h1>
+                    <img src={summer} alt="summer"/>
+                 </div>
+            )
+        }
+          
+          {
+            hemisphere && ((hemisphere=="Northern Hemisphere" && (month<3 || month>10)||(hemisphere=="southern Hemisphere" &&(month>=4 && month<=10) ))) &&
+
+            (
+              <div>
+                <h1>Welcome to winter Season</h1>
+                <img src={winter} alt="winter"/>
+
+                </div>
+
+
+            )
+
+          }
+
+
+
     </div>
 )
 
