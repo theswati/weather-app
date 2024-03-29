@@ -8,8 +8,8 @@ const App=()=>{
      const [latitude,setLatitude]=useState(0) // update the varable
      const [longitude,setLongitude]=useState(0)
      const [hemisphere,sethemisphere]=useState("")
-    //  const [month,setMonth]=useState(()=>{return new Date().getMonth()+1})
-    const [month,setMonth]=useState(11)
+     const [month,setMonth]=useState(()=>{return new Date().getMonth()+1})
+    // const [month,setMonth]=useState(11)
      // hemisphere could only be updated by sethemisphere function
 
    // Normal variables we dont use it to update in react
